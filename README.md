@@ -7,7 +7,7 @@ contributions, stars and donations are, however, all welcome.
 
 ## Installation
 
-`npm install kucoin-node-api`
+`npm install https://github.com/hirenreshamwala/kucoin-node-api.git`
 
 Alternatively, you can clone/download the repository and import into your project by file path.
 

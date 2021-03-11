@@ -457,6 +457,17 @@ api.cancelOrder(params)
 
 ```javascript
 /* 
+  Cancel an order by client id
+  DELETE /api/v1/order/client-order/<clientOid>
+  params = {
+    id: clientOid
+  }
+*/
+api.cancelOrderByClientId(params)
+```
+
+```javascript
+/* 
   Cancel all orders
   DELETE /api/v1/orders
   params = {
@@ -495,6 +506,17 @@ api.getOrderById(params)
 
 ```javascript
 /* 
+  Get an order by client id
+  GET /api/v1/order/client-order/<clientOid>
+  params = {
+    id: clientOid
+  }
+*/
+api.getOrderByClientId(params)
+```
+
+```javascript
+/* 
   List Fills
   GET /api/v1/fills
   params: {
@@ -507,6 +529,33 @@ api.getOrderById(params)
   }
 */
 api.listFills(params)
+```
+
+```javascript
+/* 
+  Place a new stop order
+  POST /api/v1/stop-order
+  Details for market order vs. limit order and params see https://docs.kucoin.com/#stop-order
+  General params
+  params = {
+    clientOid: string
+    side: string ['buy' || 'sell]
+    symbol: string
+    type: string [optional, default: limit]
+    remark: string [optional]
+    stop: string [optional] - either loss or entry and needs stopPrice
+    stopPrice: string [optional] - needed for stop 
+    stp: string [optional] (self trade prevention)
+    price: string,
+    size: string,
+    timeInForce: string [optional, default is GTC]
+    cancelAfter: long (unix time) [optional]
+    hidden: boolean [optional]
+    Iceberg: boolean [optional]
+    visibleSize: string [optional]
+  }
+*/
+api.placeStopOrder(params)
 ```
 
 ```javascript

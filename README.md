@@ -120,8 +120,18 @@ api.getPartOrderBook(params)
 
 ```javascript
 /* 
-  Get Full Order Book (aggregated)
+  Get Full Order Book (aggregated) [Deprecated]
   GET /api/v2/market/orderbook/level2?symbol=<symbol> 
+  symbol = string
+*/
+api.getFullOrderBookV2(symbol)
+```
+
+
+```javascript
+/* 
+  Get Full Order Book (aggregated)
+  GET /api/v3/market/orderbook/level2?symbol=<symbol> 
   symbol = string
 */
 api.getFullOrderBook(symbol)
@@ -129,8 +139,17 @@ api.getFullOrderBook(symbol)
 
 ```javascript
 /* 
-  Get Full Order Book (atomic) 
-  GET /api/v1/market/orderbook/level3?symbol=<symbol>
+  Get Full Order Book (atomic) [Deprecated]
+  GET /api/v2/market/orderbook/level3?symbol=<symbol>
+  symbol = string
+*/
+api.getFullOrderBookAtomicV2(symbol)
+```
+
+```javascript
+/* 
+  Get Full Order Book (atomic)
+  GET /api/v3/market/orderbook/level3?symbol=<symbol>
   symbol = string
 */
 api.getFullOrderBookAtomic(symbol)

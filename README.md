@@ -616,30 +616,34 @@ params = {
   symbols: array (ignored if not required by the endpoint, single array element if single, multiple if desired)
 }
 
+// return socket id
 // Public streaming websocket for the orderbook of the provide symbol(s)
-api.initSocket({topic: "orderbook", symbols: ['KCS-BTC']}, (msg) => {
+const socket_id = api.initSocket({topic: "orderbook", symbols: ['KCS-BTC']}, (msg) => {
   let data = JSON.parse(msg)
   console.log(data)
 })
 
 // Private streaming websocket for account balances
-api.initSocket({topic: "balances"}, (msg) => {
+const socket_id = api.initSocket({topic: "balances"}, (msg) => {
   let data = JSON.parse(msg)
   console.log(data)
 })
+
+//Close websocket
+api.ws[socket_id].close();
 ```
 
 The event handler can be programmed to manipulate/store the returned websocket stream data as desired.
 
 ## Donation Addresses
 
-BTC: 3KvTuAnv7o2VAf4LGgg1MiDURd2DgjFGaa
+BTC: 1KMYpTc1sXbTT54rnWohWMZJQiyKUCD4HE
 
 
-ETH: 0x7713a223e0e86355ac02b1e0de77695e822071cf 
+ETH: 0x139377b99de34d39eff0231487f9552bd026cdb2 
 
 
-NEO: AWngpjmoXPHiJH6rtf81brPiyPomYAqe8j  
+NEO: AS1Un9fhJ9PGYiUbja4efTUescJ9y4ghsy  
 
 Contact me for any other specific cryptocurrencies you'd prefer to use.
 
